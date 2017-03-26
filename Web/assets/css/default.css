@@ -1,0 +1,53 @@
+.loginPage{
+    background-color: aliceblue;
+}
+
+.loginPage .centeredForm {
+    width:250px;
+    height:240px;
+
+    background-color: white;
+
+    border-radius: 5px;
+    padding: 20px;
+
+    /*Centers in middle*/
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.loginPage .centeredForm img{
+    width: 100%;
+    height: 150px;
+    padding-bottom: 10px;
+}
+
+.loginPage .centeredForm input {
+    height:25px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+.loginPage .centeredForm a{
+    float:right;
+    font-size: 10px;
+    color: dodgerblue;
+}
+
+.loginPage .centeredForm a:hover{
+    color: dodgerblue;
+}
+
+.loginPage .centeredForm a:visited{
+    color: dodgerblue;
+}
+
+
+.loginPage .centeredForm .login {
+    display:none;
+}
