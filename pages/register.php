@@ -13,7 +13,7 @@
         <input type="email" name="mail" placeholder="E-Mail"/>
         <input type="password" name="password" placeholder="Password"/>
         <input type="password" name="reEnterPassword" placeholder="Re-enter password"/>
-        <input type="submit" value="Login" name="register" class="login"/>
+        <input type="submit" value="Register" name="register" class="login"/>
     </form>
     <a href="../index.php">Login</a>
 </div>
