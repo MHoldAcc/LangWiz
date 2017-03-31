@@ -9,12 +9,12 @@
 <body class="loginPage">
     <div class="centeredForm">
         <img src="assets/img/placeholder.png">
-        <form method="post" action="/dashboard.php" accept-charset="utf-8">
+        <form method="post" action="pages/dashboard.php" accept-charset="utf-8">
             <input type="email" name="mail" placeholder="E-Mail"/>
             <input type="password" name="password" placeholder="Password"/>
             <input type="submit" value="Login" name="login" class="login"/>
         </form>
-        <a href="">Register</a>
+        <a href="pages/register.php">Register</a>
     </div>
 </body>
 </html>
