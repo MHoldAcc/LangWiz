@@ -1,3 +1,10 @@
+<?php
+	include('pages/login.php'); // Includes Login Script
+
+	if(isset($_SESSION['login_user'])){
+		header("location: pages/dashboard.php");
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +16,10 @@
 <body class="loginPage">
     <div class="centeredForm">
         <img src="assets/img/placeholder.png">
-        <form method="post" action="pages/dashboard.php" accept-charset="utf-8">
+        <form method="post" action="pages/login.php" accept-charset="utf-8">
             <input type="email" name="mail" placeholder="E-Mail"/>
             <input type="password" name="password" placeholder="Password"/>
-            <input type="submit" value="Login" name="login" class="login"/>
+            <input type="submit" value="Login" name="submit" class="login"/>
         </form>
         <a href="pages/register.php">Register</a>
     </div>

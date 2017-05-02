@@ -4,6 +4,11 @@
     <title>LangWiz Login</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+	
+	<!-- Include JS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/registrationJS.js"></script>
+	
 </head>
 
 <body class="loginPage register">
