@@ -1,5 +1,5 @@
 <?php
-include_once("registerJS.php")
+//include("registration.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,8 @@ include_once("registerJS.php")
 <body class="loginPage register">
 <div class="centeredForm">
     <img src="../assets/img/placeholder.png">
-    <form method="post" action="../index.php" accept-charset="utf-8">
+    <!--<form method="post" action="../index.php" accept-charset="utf-8">-->
+    <form method="post" action="registration.php" accept-charset="utf-8">
         <input type="email" name="mail" placeholder="E-Mail"/>
         <input type="password" name="password" placeholder="Password"/>
         <input type="password" name="reEnterPassword" placeholder="Re-enter password"/>

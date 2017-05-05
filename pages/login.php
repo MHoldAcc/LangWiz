@@ -1,5 +1,4 @@
 <?php
-	session_start(); // Starting Session
 	$error=''; // Variable To Store Error Message
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['mail']) || empty($_POST['password'])) {
@@ -9,7 +8,7 @@
 			$username=$_POST['mail'];
 			$password=$_POST['password'];
 			// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-			$connection = mysqli_connect("localhost", "root", "Passw0rd", "langwizz");
+			$connection = mysqli_connect("localhost", "root", "", "langwizz");
 			// To protect MySQL injection for Security purpose
 			$username = stripslashes($username);
 			$password = stripslashes($password);
