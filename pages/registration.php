@@ -1,5 +1,4 @@
 <?php
-echo "asfd";
 if(!empty($_POST["register"])){
     if(!empty($_POST["mail"]) && !empty($_POST["password"])) {
         $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
