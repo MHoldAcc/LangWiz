@@ -1,3 +1,6 @@
+<?php
+include_once("registerJS.php")
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +10,7 @@
 	
 	<!-- Include JS -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/registrationJS.js"></script>
+<!--	<script type="text/javascript" src="../assets/js/registrationJS.js"></script>-->
 	
 </head>
 
