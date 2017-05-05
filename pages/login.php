@@ -7,18 +7,16 @@
 			// Define $username and $password
 			$username=$_POST['mail'];
 			$password=$_POST['password'];
-			// Establishing Connection with Server by passing server_name, user_id and password as a parameter
+			// Establishing Connection with Server by passing server_name, user_id, password and database as a parameter
 			$connection = mysqli_connect("localhost", "root", "", "langwizz");
 			// To protect MySQL injection for Security purpose
 			$username = stripslashes($username);
 			$password = stripslashes($password);
-			$username = mysqli_real_escape_string($username);
-			$password = mysqli_real_escape_string($password);
-			// Selecting Database
-//			$db = mysql_select_db("langwizz", $connection);
+			$username = mysqli_real_escape_string($connection, $username);
+			$password = mysqli_real_escape_string($connection, $password);
 			// SQL query to fetch information of registerd users and finds user match.
-			$query = mysqli_query("select * from user where pw like'$password' AND mail like'$username'", $connection);
-			$rows = mysql_num_rows($query);
+			$query = mysqli_query($connection, "select * from user where pw like'$password' AND mail like'$username'");
+			$rows = mysqli_num_rows($query);
 				if ($rows == 1) {
 					$_SESSION['login_user']=$username; // Initializing Session
 					header("location: dashboard.php"); // Redirecting To Other Page
