@@ -1,7 +1,6 @@
 <?php
 	session_start();
-	if(session_destroy()) // Destroying All Sessions
-	{
-		header("Location: ../index.php"); // Redirecting To Home Page
-	}
+	session_destroy(); // Destroying All Sessions
+    echo "You are being loged out.";
+    header("Refresh: 3; URL=http://localhost/LangWizz/"); // Redirecting To Home Page
 ?>

@@ -1,7 +1,7 @@
 <?php
-	include('pages/login.php'); // Includes Login Script
+	include_once('pages/session.php'); // Includes Login Script
 
-	if(isset($_SESSION['login_user'])){
+	if(!empty($_SESSION['login_user'])){
 		header("location: pages/dashboard.php");
 	}
 ?>

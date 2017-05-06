@@ -10,7 +10,7 @@ alert("Password should atleast 6 character in length...!!!!!!");
 } else if (!(password).match(cpassword)) {
 alert("Your passwords don't match. Try again?");
 } else {
-$.post("registerJS.php", {
+$.post("registration.php", {
 email1: email,
 password1: password
 }, function(data) {
