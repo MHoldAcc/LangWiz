@@ -48,7 +48,7 @@
                     }
                 }
                 ?>
-                --><div class="symbols" style="float:right;">
+                <div class="symbols" style="float:right;">
                     <a class="edit" title="Edit" href="edit?set=41">
                         <img src="../assets/img/Edit.png"></a>
                     <a class="learn" title="Learn" href="learn.php?set=41">
