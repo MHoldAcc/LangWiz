@@ -33,8 +33,19 @@
         <div class="container">
             <div class="placeholder"></div>
             <div class="vocab">
-                <p style="float:left;">Vocabulary Set 1</p>
-                <div class="symbols" style="float:right;">
+                <?php
+                $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
+                $query1 = mysqli_query($connection, "SELECT setID FROM sets WHERE userFK like (select userID from `user` where mail like '".$_COOKIE['mail']."' )");
+                $result1 = mysqli_num_rows($query1);
+                for ($i = 1; $i <= $result1;$i++) {
+                    $query2 = mysqli_query($connection, "SELECT setName FROM sets WHERE userFK like (select userID from `user` where mail like '".$_COOKIE['mail']."' )");
+                    $result2 = mysqli_fetch_row($query2);
+                    foreach ($result2 as $result) {
+                        echo '<p style="float:left;">' . $i . '.    ' . $result . '</p>';
+                    }
+                }
+                ?>
+                --><div class="symbols" style="float:right;">
                     <a class="edit" title="Edit" href="edit?set=41">
                         <img src="../assets/img/Edit.png"></a>
                     <a class="learn" title="Learn" href="learn.php?set=41">
