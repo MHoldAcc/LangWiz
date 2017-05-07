@@ -56,10 +56,10 @@ CREATE TABLE `statistic` (
 --
 
 CREATE TABLE `user` (
-  `userID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL DEFAULT 'not null',
   `mail` varchar(32) NOT NULL DEFAULT 'not null',
-  `pw` varchar(32) NOT NULL DEFAULT 'not null'
+  `pw` varchar(255) NOT NULL DEFAULT 'not null'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
