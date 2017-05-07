@@ -31,13 +31,23 @@
     </div>
     <div class="content">
         <div class="container">
+            <div class="placeholder"></div>
             <div class="vocab">
-                <h2>Vocabulary Set 1</h2>
-                <div class="symbols">
-                    <a class="edit" title="Edit">
+                <p style="float:left;">Vocabulary Set 1</p>
+                <div class="symbols" style="float:right;">
+                    <a class="edit" title="Edit" href="edit?set=41">
+                        <img src="../assets/img/placeholder.png"></a>
+                    <a class="learn" title="Learn" href="learn?set=41">
                         <img src="../assets/img/placeholder.png">
                     </a>
-                    <a class="learn" title="Learn">
+                </div>
+            </div>
+            <div class="vocab">
+                <p style="float:left;">Vocabulary Set 2</p>
+                <div class="symbols" style="float:right;">
+                    <a class="edit" title="Edit" href="edit?set=42">
+                        <img src="../assets/img/placeholder.png"></a>
+                    <a class="learn" title="Learn" href="learn?set=42">
                         <img src="../assets/img/placeholder.png">
                     </a>
                 </div>
