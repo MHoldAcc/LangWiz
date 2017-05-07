@@ -10,7 +10,7 @@
  <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Settings</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
 </head>
@@ -32,7 +32,7 @@
     <div class="content">
         <div class="container">
             <div class="vocab">
-                <h2>Vocabulary Set 1</h2>
+                <h2>Settings</h2>
                 <div class="symbols">
                     <a class="edit" title="Edit">
                         <img src="../assets/img/placeholder.png">
@@ -41,8 +41,25 @@
                         <img src="../assets/img/placeholder.png">
                     </a>
                 </div>
+
+                <div class="chpw">
+                    <br><br>
+                    <h3>Chance Password</h3>
+                    <form method="post" action="#" accept-charset="utf-8">
+                        Old password:
+                        <input type="password" name="oldpw" placeholder="Old password"/><br>
+                        New password:
+                        <input type="password" name="newpw" placeholder="New password"/><br>
+                        Re-enter new password:
+                        <input type="password" name="renewpw" placeholder="Re-enter new password"/><br>
+                        <input type="submit" value="Enter" name="submit" class="chancepw"/>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
+
+
 </body>
 </html>
