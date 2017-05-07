@@ -7,17 +7,10 @@
     <title>LangWiz Login</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
-	
-	<!-- Include JS -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!--	<script type="text/javascript" src="../assets/js/registrationJS.js"></script>-->
-	
 </head>
-
 <body class="loginPage register">
 <div class="centeredForm">
     <img src="../assets/img/placeholder.png">
-    <!--<form method="post" action="../index.php" accept-charset="utf-8">-->
     <form method="post" action="registration.php" accept-charset="utf-8">
         <input type="text" name="name" placeholder="Username"/>
         <input type="email" name="mail" placeholder="E-Mail"/>

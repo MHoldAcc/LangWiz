@@ -57,7 +57,7 @@ CREATE TABLE `statistic` (
 
 CREATE TABLE `user` (
   `userID` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL DEFAULT 'not null',
+  `username` varchar(32) NOT NULL DEFAULT 'not null',
   `mail` varchar(32) NOT NULL DEFAULT 'not null',
   `pw` varchar(32) NOT NULL DEFAULT 'not null'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -66,7 +66,7 @@ CREATE TABLE `user` (
 -- Daten für Tabelle `user`
 --
 
-INSERT INTO `user` (`userID`, `name`, `mail`, `pw`) VALUES
+INSERT INTO `user` (`userID`, `username`, `mail`, `pw`) VALUES
 (1, 'not null', 'laura.steiner@nyp.ch', '123456');
 
 -- --------------------------------------------------------
