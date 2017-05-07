@@ -12,22 +12,25 @@
     <title>Settings</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body class="page dashboard">
-    <div class="menu">
-        <div class="buttons">
-            <a href="dashboard.php" class="dashboard" title="Dashboard">
-                <img src="../assets/img/Home.png"/>
-            </a>
-            <a href="settings.php" class="settings" title="Settings">
-                <img src="../assets/img/Settings.png"/>
-            </a>
-            <a href="logout.php" class="logout" title="Logout">
-                <img src="../assets/img/Logout.png"/>
-            </a>
-        </div>
+<div class="menu col-sm-1">
+    <div class="buttons">
+        <a href="dashboard.php" class="dashboard" title="Dashboard">
+            <img src="../assets/img/Home.png"/>
+        </a>
+        <a href="settings.php" class="settings" title="Settings">
+            <img src="../assets/img/Settings.png"/>
+        </a>
+        <a href="logout.php" class="logout" title="Logout">
+            <img src="../assets/img/Logout.png"/>
+        </a>
     </div>
-    <div class="content">
+</div>
+<div class="content col-sm-11">
         <div class="container">
             <div class="vocab">
                 <h2>Settings</h2>
