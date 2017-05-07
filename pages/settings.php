@@ -6,7 +6,6 @@
  * Time: 17:53
  */
  ?>
- 
  <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +13,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
 </head>
-
 <body class="page dashboard">
     <div class="menu">
         <div class="buttons">
@@ -41,11 +39,10 @@
                         <img src="../assets/img/placeholder.png">
                     </a>
                 </div>
-
                 <div class="chpw">
                     <br><br>
                     <h3>Chance Password</h3>
-                    <form method="post" action="#" accept-charset="utf-8">
+                    <form method="post" action="newpass.php" accept-charset="utf-8">
                         Old password:
                         <input type="password" name="oldpw" placeholder="Old password"/><br>
                         New password:
@@ -59,7 +56,5 @@
             </div>
         </div>
     </div>
-
-
 </body>
 </html>
