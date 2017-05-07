@@ -37,7 +37,7 @@
                 <div class="symbols" style="float:right;">
                     <a class="edit" title="Edit" href="edit?set=41">
                         <img src="../assets/img/placeholder.png"></a>
-                    <a class="learn" title="Learn" href="learn?set=41">
+                    <a class="learn" title="Learn" href="learn.php?set=41">
                         <img src="../assets/img/placeholder.png">
                     </a>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="symbols" style="float:right;">
                     <a class="edit" title="Edit" href="edit?set=42">
                         <img src="../assets/img/placeholder.png"></a>
-                    <a class="learn" title="Learn" href="learn?set=42">
+                    <a class="learn" title="Learn" href="learn.php?set=42">
                         <img src="../assets/img/placeholder.png">
                     </a>
                 </div>
