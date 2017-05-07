@@ -24,3 +24,6 @@ if (!empty($_POST["submit"])) {
         header('Location: settings.php');
     }
 }
+header("Refresh: 1; URL=../index.php"); // Redirecting To Home Page
+?>
+Your password is getting changed.

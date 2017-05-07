@@ -13,26 +13,28 @@
     <title>Dashboard</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body class="page dashboard">
-    <div class="menu">
-        <div class="buttons">
-            <a href="dashboard.php" class="dashboard" title="Dashboard">
-                <img src="../assets/img/Home.png"/>
-            </a>
-            <a href="settings.php" class="settings" title="Settings">
-                <img src="../assets/img/Settings.png"/>
-            </a>
-            <a href="logout.php" class="logout" title="Logout">
-                <img src="../assets/img/Logout.png"/>
-            </a>
-        </div>
+<div class="menu col-sm-1">
+    <div class="buttons">
+        <a href="dashboard.php" class="dashboard" title="Dashboard">
+            <img src="../assets/img/Home.png"/>
+        </a>
+        <a href="settings.php" class="settings" title="Settings">
+            <img src="../assets/img/Settings.png"/>
+        </a>
+        <a href="logout.php" class="logout" title="Logout">
+            <img src="../assets/img/Logout.png"/>
+        </a>
     </div>
-    <div class="content">
+</div>
+<div class="content col-sm-11">
         <div class="container">
             <div class="placeholder"></div>
-            <div class="vocab">
                 <?php
                 $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
                 $query1 = mysqli_query($connection, "SELECT setID FROM sets WHERE userFK like (select userID from `user` where mail like '".$_COOKIE['mail']."' )");
@@ -41,28 +43,16 @@
                     $query2 = mysqli_query($connection, "SELECT setName FROM sets WHERE userFK like (select userID from `user` where mail like '".$_COOKIE['mail']."' )");
                     $result2 = mysqli_fetch_row($query2);
                     foreach ($result2 as $result) {
+                        echo '<div class="vocab">';
                         echo '<p style="float:left;">' . $i . '.    ' . $result . '</p>';
+                        echo '<div class="symbols" style="float:right;">';
+                        echo '<a class="edit" title="Edit" href="edit?set=' . $result . '">';
+                        echo '<img src="../assets/img/Edit.png"></a>';
+                        echo '<a class="learn" title="Learn" href="learn.php?set=' . $result . '">';
+                        echo '<img src="../assets/img/Play.png"></a></div></div>';
                     }
                 }
                 ?>
-                --><div class="symbols" style="float:right;">
-                    <a class="edit" title="Edit" href="edit?set=41">
-                        <img src="../assets/img/Edit.png"></a>
-                    <a class="learn" title="Learn" href="learn.php?set=41">
-                        <img src="../assets/img/Play.png">
-                    </a>
-                </div>
-            </div>
-            <div class="vocab">
-                <p style="float:left;">Vocabulary Set 2</p>
-                <div class="symbols" style="float:right;">
-                    <a class="edit" title="Edit" href="edit?set=42">
-                        <img src="../assets/img/Edit.png"></a>
-                    <a class="learn" title="Learn" href="learn.php?set=42">
-                        <img src="../assets/img/Play.png">
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </body>
