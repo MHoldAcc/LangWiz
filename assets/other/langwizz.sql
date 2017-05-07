@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2017 at 10:13 AM
+-- Generation Time: May 07, 2017 at 05:39 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -34,6 +34,13 @@ CREATE TABLE `sets` (
   `language2` varchar(50) NOT NULL DEFAULT 'not null'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `sets`
+--
+
+INSERT INTO `sets` (`setID`, `userFK`, `setName`, `languange1`, `language2`) VALUES
+(1, 4, 'testset', 's', 'd');
+
 -- --------------------------------------------------------
 
 --
@@ -57,10 +64,17 @@ CREATE TABLE `statistic` (
 
 CREATE TABLE `user` (
   `userID` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL DEFAULT 'not null',
+  `username` varchar(32) NOT NULL DEFAULT 'not null',
   `mail` varchar(32) NOT NULL DEFAULT 'not null',
-  `pw` varchar(32) NOT NULL DEFAULT 'not null'
+  `pw` varchar(255) NOT NULL DEFAULT 'not null'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userID`, `username`, `mail`, `pw`) VALUES
+(4, 'Admin', 'admin@langwizz.ch', '6c7ca345f63f835cb353ff15bd6c5e052ec08e7a');
 
 -- --------------------------------------------------------
 
@@ -123,6 +137,15 @@ ALTER TABLE `word_set`
   ADD KEY `FKset` (`setFK`),
   ADD KEY `wordFK` (`wordFK`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
