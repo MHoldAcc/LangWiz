@@ -8,7 +8,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html xmlns:height="http://www.w3.org/1999/xhtml">
 <head>
     <title>Learning</title>
     <meta charset="utf-8">
@@ -19,13 +19,13 @@
 <div class="menu">
     <div class="buttons">
         <a href="dashboard.php" class="dashboard" title="Dashboard">
-            <img src="../assets/img/placeholder.png"/>
+            <img src="../assets/img/Home.png"/>
         </a>
         <a href="settings.php" class="settings" title="Settings">
-            <img src="../assets/img/placeholder.png"/>
+            <img src="../assets/img/Settings.png"/>
         </a>
         <a href="logout.php" class="logout" title="Logout">
-            <img src="../assets/img/placeholder.png"/>
+            <img src="../assets/img/Logout.png"/>
         </a>
     </div>
 </div>
@@ -36,11 +36,11 @@
             that.textContent = that.textContent == oword ? word : oword;
         }
     </script>
-    <div>
-        <a href="learn.php?result=true" title="Correct">
-            <img src="../assets/img/placeholder.png" /></a>
+    <div style="background-color: aquamarine">
+        <a href="learn.php?result=true" title="Correct" >
+            <img  src="../assets/img/Correct.png" style="height:60px" /></a>
         <a href="learn.php?result=false" title="Wrong">
-            <img src="../assets/img/placeholder.png" /></a>
+            <img src="../assets/img/Wrong.png" style="height:60px"/></a>
     </div>
 </div>
 </body>

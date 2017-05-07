@@ -19,13 +19,13 @@
     <div class="menu">
         <div class="buttons">
             <a href="dashboard.php" class="dashboard" title="Dashboard">
-                <img src="../assets/img/placeholder.png"/>
+                <img src="../assets/img/Home.png"/>
             </a>
             <a href="settings.php" class="settings" title="Settings">
-                <img src="../assets/img/placeholder.png"/>
+                <img src="../assets/img/Settings.png"/>
             </a>
             <a href="logout.php" class="logout" title="Logout">
-                <img src="../assets/img/placeholder.png"/>
+                <img src="../assets/img/Logout.png"/>
             </a>
         </div>
     </div>
@@ -36,9 +36,9 @@
                 <p style="float:left;">Vocabulary Set 1</p>
                 <div class="symbols" style="float:right;">
                     <a class="edit" title="Edit" href="edit?set=41">
-                        <img src="../assets/img/placeholder.png"></a>
+                        <img src="../assets/img/Edit.png"></a>
                     <a class="learn" title="Learn" href="learn.php?set=41">
-                        <img src="../assets/img/placeholder.png">
+                        <img src="../assets/img/Play.png">
                     </a>
                 </div>
             </div>
@@ -46,9 +46,9 @@
                 <p style="float:left;">Vocabulary Set 2</p>
                 <div class="symbols" style="float:right;">
                     <a class="edit" title="Edit" href="edit?set=42">
-                        <img src="../assets/img/placeholder.png"></a>
+                        <img src="../assets/img/Edit.png"></a>
                     <a class="learn" title="Learn" href="learn.php?set=42">
-                        <img src="../assets/img/placeholder.png">
+                        <img src="../assets/img/Play.png">
                     </a>
                 </div>
             </div>
