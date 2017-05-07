@@ -23,3 +23,6 @@ if (!empty($_POST["submit"])) {
         mysqli_close($connection);
     }
 }
+header("Refresh: 1; URL=../index.php"); // Redirecting To Home Page
+?>
+Your password is getting changed.
