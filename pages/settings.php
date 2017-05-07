@@ -41,22 +41,25 @@
                         <img src="../assets/img/placeholder.png">
                     </a>
                 </div>
+
+                <div class="chpw">
+                    <br><br>
+                    <h3>Chance Password</h3>
+                    <form method="post" action="#" accept-charset="utf-8">
+                        Old password:
+                        <input type="password" name="oldpw" placeholder="Old password"/><br>
+                        New password:
+                        <input type="password" name="newpw" placeholder="New password"/><br>
+                        Re-enter new password:
+                        <input type="password" name="renewpw" placeholder="Re-enter new password"/><br>
+                        <input type="submit" value="Enter" name="submit" class="chancepw"/>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <div class="chpw">
-        <br><br>
-        <h3>Chance Password</h3>
-        <form method="post" action="#" accept-charset="utf-8">
-            Old password:
-            <input type="password" name="oldpw" placeholder="Old password"/><br>
-            New password:
-            <input type="password" name="newpw" placeholder="New password"/><br>
-            Re-enter new password:
-            <input type="password" name="renewpw" placeholder="Re-enter new password"/><br>
-            <input type="submit" value="Enter" name="submit" class="chancepw"/>
-        </form>
-    </div>
+
 </body>
 </html>
