@@ -19,19 +19,9 @@
 </head>
 
 <body class="page learn">
-<div class="menu col-sm-1">
-    <div class="buttons">
-        <a href="dashboard.php" class="dashboard" title="Dashboard">
-            <img src="../assets/img/Home.png"/>
-        </a>
-        <a href="settings.php" class="settings" title="Settings">
-            <img src="../assets/img/Settings.png"/>
-        </a>
-        <a href="logout.php" class="logout" title="Logout">
-            <img src="../assets/img/Logout.png"/>
-        </a>
-    </div>
-</div>
+<?php
+include '../assets/includes/menuLeft.php';
+?>
 <div class="content col-sm-11">
     <div class="col-sm-12" style="min-height:20px"></div>
     <div class="col-sm-1"></div>
