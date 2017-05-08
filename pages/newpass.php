@@ -13,7 +13,7 @@ if (!empty($_POST["submit"])) {
         $result = mysqli_query($connection, "SELECT * FROM user WHERE pw like'" . $oldpw . "'");
         $data = mysqli_num_rows($result);
         if ($data == 1) {
-            $query = mysqli_query($connection, "UPDATE TABLE `user` set `pw`='" . $newpw . "' where userID like (select userID from `user` where pw like '" . $oldpw . "' )"); // Insert query
+            $query = mysqli_query($connection, "UPDATE `user` set `pw`='" . $newpw . "' where userID like (select userID from `user` where pw like '" . $oldpw . "' )"); // Insert query
             if ($query) {
                 echo "You have Successfully changed your password";
                 header('Location: ../dashboard.php'); // Redirecting To Home Page
