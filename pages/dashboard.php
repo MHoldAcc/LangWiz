@@ -46,7 +46,7 @@
                         echo '<div class="vocab col-sm-11">';
                         echo '<p style="float:left;">' . $i . '.    ' . $result . '</p>';
                         echo '<div class="symbols" style="float:right;">';
-                        echo '<a class="edit" title="Edit" href="edit?set=' . $result . '">';
+                        echo '<a class="edit" title="Edit" href="editvocabulary.php?set=' . $result . '">';
                         echo '<img src="../assets/img/Edit.png"></a>';
                         echo '<a class="learn" title="Learn" href="learn.php?set=' . $result . '">';
                         echo '<img src="../assets/img/Play.png"></a></div></div>';
