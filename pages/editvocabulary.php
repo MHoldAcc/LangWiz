@@ -37,19 +37,8 @@ include '../assets/includes/menuLeft.php';
         //}
         ?>
         <div class="editVocabulary">
-            <br><br>
-            <h3>Add a new Set</h3>
-            <!--<form method="post" action="editvocabulary.php" accept-charset="utf-8">-->
-            <form method="post" action="../assets/includes/connectDatabase.php" accept-charset="utf-8">
-                Set name:
-                <input type="text" name="setName" placeholder="Set 1"/><br>
-                Language One:
-                <input type="text" name="languageOne" placeholder="Example: Deutsch"/><br>
-                Language Two:
-                <input type="text" name="languageTwo" placeholder="Example: Englisch"/><br>
-                <input type="submit" value=" Ok " name="newSet" class="newLanguages"/>
-            </form>
-            <br><br>
+            <div class="placeholder"></div>
+            <h1>Vocabulary Sets</h1>
             <h3>Add new Words</h3>
             <!--<form method="post" action="editvocabulary.php" accept-charset="utf-8">-->
             <form method="post" action="../assets/includes/connectDatabase.php" accept-charset="utf-8">
