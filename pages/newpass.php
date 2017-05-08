@@ -16,7 +16,7 @@ if (!empty($_POST["submit"])) {
             $query = mysqli_query($connection, "UPDATE TABLE `user` set `pw`='" . $newpw . "' where userID like (select userID from `user` where pw like '" . $oldpw . "' )"); // Insert query
             if ($query) {
                 echo "You have Successfully changed your password";
-                header('Location: ../index.php'); // Redirecting To Home Page
+                header('Location: ../dashboard.php'); // Redirecting To Home Page
             }
 
         }
@@ -24,6 +24,4 @@ if (!empty($_POST["submit"])) {
         header('Location: settings.php');
     }
 }
-header("Refresh: 1; URL=../index.php"); // Redirecting To Home Page
 ?>
-Your password is getting changed.
