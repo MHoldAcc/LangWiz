@@ -43,7 +43,7 @@
                     $query2 = mysqli_query($connection, "SELECT setName FROM sets WHERE userFK like (select userID from `user` where mail like '".$_COOKIE['mail']."' )");
                     $result2 = mysqli_fetch_row($query2);
                     foreach ($result2 as $result) {
-                        echo '<div class="vocab">';
+                        echo '<div class="vocab col-sm-11">';
                         echo '<p style="float:left;">' . $i . '.    ' . $result . '</p>';
                         echo '<div class="symbols" style="float:right;">';
                         echo '<a class="edit" title="Edit" href="edit?set=' . $result . '">';
