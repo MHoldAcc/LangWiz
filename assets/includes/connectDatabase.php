@@ -9,14 +9,14 @@
 //Code zum ein set anlege
 
 
-/*Führt Code aus nachdem der Erfassen-Button betätigt wurde.*/
+/*FÃ¼hrt Code aus nachdem der Erfassen-Button betï¿½tigt wurde.*/
 if(!empty($_POST["newWords"])){
   if($_POST['wordOne'] != "" and $_POST['wordTwo'] != "" ){
     insertIntoDB($_POST['wordOne'], $_POST['wordTwo'] );
   }
 }
 
-/*Führt Code aus nachdem der Delete-Button betätigt wurde.*/
+/*Fï¿½hrt Code aus nachdem der Delete-Button betï¿½tigt wurde.*/
 if(!empty($_POST['delete'])) {
   $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
   $delete = "delete from words where wordID = ?";
