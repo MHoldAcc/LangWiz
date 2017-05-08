@@ -25,6 +25,8 @@ include '../assets/includes/menuLeft.php';
 <div class="content col-sm-11">
         <div class="container">
             <div class="placeholder"></div>
+            <h1>Vocabulary Sets</h1>
+            <div class="placeholder"></div>
                 <?php
                 $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
                 $query1 = mysqli_query($connection, "SELECT setID FROM sets WHERE userFK like (select userID from `user` where mail like '".$_COOKIE['mail']."' )");
