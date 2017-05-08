@@ -19,40 +19,32 @@
 </head>
 
 <body class="page dashboard">
-<div class="menu col-sm-1">
-    <div class="buttons">
-        <a href="dashboard.php" class="dashboard" title="Dashboard">
-            <img src="../assets/img/Home.png"/>
-        </a>
-        <a href="settings.php" class="settings" title="Settings">
-            <img src="../assets/img/Settings.png"/>
-        </a>
-        <a href="logout.php" class="logout" title="Logout">
-            <img src="../assets/img/Logout.png"/>
-        </a>
-    </div>
-</div>
+<?php
+include '../assets/includes/menuLeft.php';
+?>
 <div class="content col-sm-11">
         <div class="container">
             <div class="placeholder"></div>
-                <div class="vocab col-sm-11">
-                    <h5>New Set</h5>
-                    <div class="symbols" style="float:right;">
-                        <img src="../assets/img/Edit.png"></a>
-                    <img src="../assets/img/Play.png"></a></div>
-                </div>
-
-            <br><br><br><br>
+            <h1>New Vocabulary Set</h1>
+            <h3>Create new set</h3>
             <form method="post" action="../assets/includes/connectDatabase.php" accept-charset="utf-8">
-                Set name:
-                <input type="text" name="setName" placeholder="Example Set"/><br>
-                Language One:
-                <input type="text" name="languageOne" placeholder="Example: german"/><br>
-                Language Two:
-                <input type="text" name="languageTwo" placeholder="Example: english"/><br>
-                <input type="submit" value=" Ok " name="newSet" class="newLanguages"/>
+                <div class="col-sm-3">
+                    Set name:<br/>
+                    Language One:<br/>
+                    Language Two:
+                </div>
+                <div>
+                    <input type="text" name="setName" placeholder="Example Set" class="col-sm-5"/><br>
+                    <input type="text" name="languageOne" placeholder="Example: german" class="col-sm-5"/><br>
+                    <input type="text" name="languageTwo" placeholder="Example: english" class="col-sm-5"/><br>
+                </div>
+                <br>
+                <div class="col-sm-3"></div>
+                <input type="submit" value=" Ok " name="newSet" class="newLanguages col-sm-5"/>
             </form>
-
+            <br>
+            <br>
+            <br>
         </div>
     </div>
 </body>

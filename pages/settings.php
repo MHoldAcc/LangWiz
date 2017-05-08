@@ -33,7 +33,7 @@ include '../assets/includes/menuLeft.php';
                         New password:<br/>
                         Re-enter new password: <br/>
                     </div>
-                    <div >
+                    <div>
                         <input type="password" name="oldpw" placeholder="Old password" class="col-sm-5"/><br>
                         <input type="password" name="newpw" placeholder="New password" class="col-sm-5"/><br>
                         <input type="password" name="renewpw" placeholder="Re-enter new password" class="col-sm-5"/><br>
