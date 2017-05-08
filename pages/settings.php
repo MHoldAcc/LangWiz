@@ -32,16 +32,9 @@
 </div>
 <div class="content col-sm-11">
         <div class="container">
-            <div class="vocab">
-                <h2>Settings</h2>
-                <div class="symbols">
-                    <a class="edit" title="Edit">
-                        <img src="../assets/img/placeholder.png">
-                    </a>
-                    <a class="learn" title="Learn">
-                        <img src="../assets/img/placeholder.png">
-                    </a>
-                </div>
+            <div class="placeholder"></div>
+            <div class="vocab col-sm-11">
+                <div><p style="float:left;">  Settings</p></div>
                 <div class="chpw">
                     <br><br>
                     <h3>Chance Password</h3>
