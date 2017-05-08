@@ -74,6 +74,22 @@
     margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 767px) {
+    .page .menu {
+        height: auto;
+        min-height: 70px;
+    }
+    .page .menu .buttons img {
+        margin-top: 5px;
+        height: 60px;
+        width:auto;
+        display: inline-block;
+    }
+    .page .menu .buttons{
+        margin-right: auto;
+        float: right;
+    }
+}
 .dashboard .vocab{
     height: 30px;
     background-color: gray;
