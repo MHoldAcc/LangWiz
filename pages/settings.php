@@ -17,38 +17,33 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body class="page dashboard">
-<div class="menu col-sm-1">
-    <div class="buttons">
-        <a href="dashboard.php" class="dashboard" title="Dashboard">
-            <img src="../assets/img/Home.png"/>
-        </a>
-        <a href="settings.php" class="settings" title="Settings">
-            <img src="../assets/img/Settings.png"/>
-        </a>
-        <a href="logout.php" class="logout" title="Logout">
-            <img src="../assets/img/Logout.png"/>
-        </a>
-    </div>
-</div>
+<?php
+include '../assets/includes/menuLeft.php';
+?>
 <div class="content col-sm-11">
         <div class="container">
             <div class="placeholder"></div>
-            <div class="vocab col-sm-11">
-                <div><p style="float:left;">  Settings</p></div>
-                <div class="chpw">
-                    <br><br>
-                    <h3>Chance Password</h3>
-                    <form method="post" action="newpass.php" accept-charset="utf-8">
-                        Old password:
-                        <input type="password" name="oldpw" placeholder="Old password"/><br>
-                        New password:
-                        <input type="password" name="newpw" placeholder="New password"/><br>
-                        Re-enter new password:
-                        <input type="password" name="renewpw" placeholder="Re-enter new password"/><br>
-                        <input type="submit" value="Enter" name="submit" class="chancepw"/>
-                    </form>
-                </div>
+            <h1>Settings</h1>
+            <div class="chpw">
 
+                <h3>Change Password</h3>
+                <form method="post" action="newpass.php" accept-charset="utf-8">
+                    <div class="col-sm-3">
+                        Old password:<br/>
+                        New password:<br/>
+                        Re-enter new password: <br/>
+                    </div>
+                    <div>
+                        <input type="password" name="oldpw" placeholder="Old password" class="col-sm-5"/><br>
+                        <input type="password" name="newpw" placeholder="New password" class="col-sm-5"/><br>
+                        <input type="password" name="renewpw" placeholder="Re-enter new password" class="col-sm-5"/><br>
+                    </div>
+                    <br/>
+                    <div class="col-sm-3"></div>
+                    <input type="submit" value="Enter" name="submit" class="changepw col-sm-5"/>
+                </form>
+                <br/>
+                <br/>
             </div>
         </div>
     </div>
