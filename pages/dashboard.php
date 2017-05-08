@@ -51,6 +51,9 @@
                         echo '<a class="learn" title="Learn" href="learn.php?set=' . $result . '">';
                         echo '<img src="../assets/img/Play.png"></a></div></div>';
                     }
+                    $cookie_name = "set".$i;
+                    $cookie_value = $result;
+                    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
                 }
                 ?>
         </div>
