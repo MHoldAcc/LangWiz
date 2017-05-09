@@ -1,3 +1,4 @@
+<?php include '../assets/includes/defaultfunctions.php';  ?>
 <div class="menu col-sm-1">
     <div class="buttons">
         <a href="dashboard.php" class="dashboard" title="Dashboard">
