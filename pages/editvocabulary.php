@@ -11,16 +11,10 @@
 <html>
 <head>
     <title>Edit Voci</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <?php include '../assets/includes/headReferences.php';  ?>
 </head>
 <body class="page dashboard">
-<?php
-include '../assets/includes/menuLeft.php';
-?>
+<?php include '../assets/includes/menuLeft.php'; ?>
 <div class="content col-sm-11">
     <div class="container">
         <div class="placeholder"></div>
