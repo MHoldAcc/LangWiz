@@ -1,21 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Erstellungszeit: 27. Apr 2017 um 11:00
--- Server-Version: 10.1.13-MariaDB
--- PHP-Version: 5.6.23
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Datenbank: `langwizz`
 --
@@ -33,6 +15,13 @@ CREATE TABLE `sets` (
   `languange1` varchar(50) NOT NULL DEFAULT 'not null',
   `language2` varchar(50) NOT NULL DEFAULT 'not null'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `sets`
+--
+
+INSERT INTO `sets` (`setID`, `userFK`, `setName`, `languange1`, `language2`) VALUES
+(1, 4, 'testset', 's', 'd');
 
 -- --------------------------------------------------------
 
@@ -56,7 +45,7 @@ CREATE TABLE `statistic` (
 --
 
 CREATE TABLE `user` (
-  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL,
   `username` varchar(32) NOT NULL DEFAULT 'not null',
   `mail` varchar(32) NOT NULL DEFAULT 'not null',
   `pw` varchar(255) NOT NULL DEFAULT 'not null'
@@ -67,7 +56,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userID`, `username`, `mail`, `pw`) VALUES
-(1, 'not null', 'laura.steiner@nyp.ch', '123456');
+(4, 'Admin', 'admin@langwizz.ch', '6c7ca345f63f835cb353ff15bd6c5e052ec08e7a');
 
 -- --------------------------------------------------------
 
@@ -80,6 +69,13 @@ CREATE TABLE `words` (
   `word1` varchar(50) NOT NULL DEFAULT 'not null',
   `word2` varchar(50) NOT NULL DEFAULT 'not null'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `words`
+--
+
+INSERT INTO `words` (`wordID`, `word1`, `word2`) VALUES
+(0, 'das Licht', 'light');
 
 -- --------------------------------------------------------
 
@@ -130,15 +126,6 @@ ALTER TABLE `word_set`
   ADD KEY `FKset` (`setFK`),
   ADD KEY `wordFK` (`wordFK`);
 
---
--- AUTO_INCREMENT für exportierte Tabellen
---
-
---
--- AUTO_INCREMENT für Tabelle `user`
---
-ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints der exportierten Tabellen
 --
