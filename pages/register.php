@@ -9,7 +9,7 @@
 </head>
 <body class="loginPage register">
 <div class="centeredForm">
-    <img src="../assets/img/placeholder.png">
+    <img src="../assets/img/Logo.png">
     <form method="post" action="registration.php" accept-charset="utf-8">
         <input type="text" name="name" placeholder="Username"/>
         <input type="email" name="mail" placeholder="E-Mail"/>
