@@ -1,5 +1,6 @@
 <?php
 	include_once('pages/session.php'); // Includes Login Script
+    include('assets/includes/defaultfunctions.php');
 
 	if(!empty($_SESSION['login_user'])){
 		header("location: pages/dashboard.php");
@@ -23,12 +24,7 @@
             <input type="submit" value="Login" name="submit" class="login"/>
         </form>
         <a href="pages/register.php">Register</a>
-        <?php
-        if(@$_SESSION['login_failure'] == 'true'){
-            echo '<a class="failure">Failed to login      </a>';
-            $_SESSION['login_failure'] = 'false';
-        }
-        ?>
+        <?php printLoginFailure(); ?>
     </div>
 </body>
 </html>
