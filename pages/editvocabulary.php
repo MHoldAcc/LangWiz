@@ -19,17 +19,7 @@
     <div class="container">
         <div class="placeholder"></div>
         <body class="page dashboard">
-        <?php
-        include_once '../assets/includes/connectDatabase.php';
-
-        //Definition der Variable $conn
-        //$conn = mysqli_connect("localhost", "nypadmin", "!30nyp48", "langwizz");
-        //mysqli_query($conn, "SET NAMES 'utf8'");
-
-        //if (!$conn) {
-        //    die("FEHLER, keine Verbindung zur Datenbank m&ouml;glich: " . mysqli_connect_error());
-        //}
-        ?>
+        <?php include_once '../assets/includes/connectDatabase.php'; ?>
         <div class="editVocabulary">
             <div class="placeholder"></div>
             <h1>Vocabulary Sets</h1>
@@ -50,11 +40,14 @@
             <br><br>
             <h3>Add new Words</h3>
             <form method="post" action="editvocabulary.php" accept-charset="utf-8">
-                Word One:
-                <input type="text" class="form-control" name="wordOne" placeholder="Example: das Licht" /><br>
-                Word Two:
-                <input type="text" class="form-control" name="wordTwo" placeholder="Example: light" /><br>
-                <input type="submit" value=" Ok " name="newWords" class="newWords"/>
+                <p class="col-sm-3">Word One:</p>
+                <input type="text" class="col-sm-9" name="wordOne" placeholder="Example: das Licht" />
+                <div class="col-sm-12"></div>
+                <p class="col-sm-3">Word Two:</p>
+                <input type="text" class="col-sm-9" name="wordTwo" placeholder="Example: light" /><br>
+                <div class="col-sm-12"></div>
+                <div class="col-sm-3"></div>
+                <input type="submit" class="col-sm-9" value=" Ok " name="newWords" class="newWords"/>
             </form>
             <?php
             /*Führt Code aus nachdem der Erfassen-Button betätigt wurde.*/
@@ -64,7 +57,7 @@
                 }
             }
             ?>
-            <br><br>
+            <br><br><br><br>
             <h3>Delete Words</h3>
             <form method="post" action="editvocabulary.php">
                 <br>
