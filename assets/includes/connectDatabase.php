@@ -12,8 +12,8 @@
 /*Fuehrt Code aus nachdem der Erfassen-Button bet�tigt wurde.*/
 if(!empty($_POST["newWords"])){
   if($_POST['wordOne'] != "" and $_POST['wordTwo'] != "" ){
-      $wordOne = $_POST['wordOne'];
-      $wordTwo = $_POST['wordTwo'];
+    $wordOne = $_POST['wordOne'];
+    $wordTwo = $_POST['wordTwo'];
     insertIntoDB($wordOne, $wordTwo);
   }
 }
@@ -33,14 +33,16 @@ function insertIntoDB($wordOne, $wordTwo) {
   $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
   $query = mysqli_query($connection, "insert into `words`(word1, word2) values ('".$wordOne."', '".$wordTwo."')");
   if ($query) {
-      $query2 = mysqli_query($connection, "insert into `word_set` (setFK, wordFK) VALUES ((select setID from sets WHERE setName like '".$_COOKIE['set']."'),(select wordID from word WHERE word1 like '".$wordOne."' and word2 like '".$wordTwo."'))");
-      if ($query2) {
-          echo "Words Successfully added.....";
-      } else {
-          echo "Error..5..!!";
-      }
+    $query2 = mysqli_query($connection, "insert into `word_set` (setFK, wordFK) VALUES ((select setID from sets WHERE setName like '".$_COOKIE['set']."'),(select wordID from words WHERE word1 like '".$wordOne."' and word2 like '".$wordTwo."'))");
+    if ($query2) {
+      echo "Words Successfully added.....";
+    } else {
+      echo "Error..5..!!";
+    }
   } else {
     echo "Error....!!";
+    $delete = "delete from words where wordID = ?";
+    deleteFromDB($connection, $delete);
   }
   mysqli_close($connection);
 }
