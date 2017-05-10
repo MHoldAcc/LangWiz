@@ -6,7 +6,7 @@
  * Time: 15:03
  */
 
-//session_start();
+@session_start();
 
 /*Fuehrt Code aus nachdem der Erfassen-Button bet�tigt wurde.*/
 if(!empty($_POST["newWords"])){
@@ -39,31 +39,21 @@ if(!empty($_POST["newSet"])){
 
 function renameSet ($renamed){
     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-    $query = mysqli_query($connection, "UPDATE `sets` set `setName`='" . $renamed . "' where  setName like '" . $_GET['set'] . "'");
+    $query = mysqli_query($connection, "UPDATE `sets` set `setName`='" . $renamed . "' where  setName like '" . $_SESSION['set'] . "'");
     if ($query) {
         echo "Set has been renamed";
         header("location: dashboard.php");
     } else {
         echo "ups";
     }
+    mysqli_close($connection);
 }
-
-/*Fuehrt Code aus nachdem der Delete-Button betaetigt wurde.*
-if(!empty($_POST['delete'])) {
-    $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-    $delete = "delete from words where wordID = ?";
-    deleteFromDB($connection, $delete);
-    $sql = "select * from words";
-    //$sql = "select * from words ";
-    createDropdown($connection, $sql);
-}*/
-
 
 function insertIntoDB($wordOne, $wordTwo) {
     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
     $query = mysqli_query($connection, "insert into `words`(word1, word2) values ('".$wordOne."', '".$wordTwo."')");
     if ($query) {
-        $query2 = mysqli_query($connection, "insert into `word_set` (setFK, wordFK) VALUES ((select setID from sets WHERE setName like '".$_GET['set']."'),(select wordID from words WHERE word1 like '".$wordOne."' and word2 like '".$wordTwo."'))");
+        $query2 = mysqli_query($connection, "insert into `word_set` (setFK, wordFK) VALUES ((select setID from sets WHERE setName like '".$_SESSION['set']."'),(select wordID from words WHERE word1 like '".$wordOne."' and word2 like '".$wordTwo."'))");
         if ($query2) {
             echo "Words Successfully added.....";
             header("location: dashboard.php");
