@@ -74,7 +74,9 @@
                 createDropdown($connection, $sql);
                 if (!empty($_GET['set'])){
                     $_SESSION['set'] = $_GET['set'];
-                } else{
+                } elseif (!empty($_SESSION['set'])){
+
+                } else {
                     header("Refresh:0");
                 }
                 ?>
