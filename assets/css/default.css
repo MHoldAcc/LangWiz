@@ -126,3 +126,26 @@
     padding-top: 3px;
 }
 
+.learn .content .wordbox{
+    background-color: gray;
+    color:white;
+    font-size: 45px;
+    height: 50vh;
+    text-align: center;
+    line-height: 50vh;
+    border-radius: 25px;
+}
+
+.content .min-height-20{
+    min-height:20px;
+}
+
+.learn .content .correct{
+    background-color:green;
+    border-radius: 25px;
+}
+
+.learn .content .wrong{
+    background-color:red;
+    border-radius: 25px;
+}
