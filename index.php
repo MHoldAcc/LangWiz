@@ -23,6 +23,12 @@
             <input type="submit" value="Login" name="submit" class="login"/>
         </form>
         <a href="pages/register.php">Register</a>
+        <?php
+        if(@$_SESSION['login_failure'] == 'true'){
+            echo '<a class="failure">Failed to login      </a>';
+            $_SESSION['login_failure'] = 'false';
+        }
+        ?>
     </div>
 </body>
 </html>

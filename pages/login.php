@@ -26,6 +26,7 @@
 				} else {
 					$error = "Username or Password is invalid";
 					echo $error;
+                    $_SESSION['login_failure'] = 'true';
 					header("location: ../index.php");
 				}
 			mysqli_close($connection); // Closing Connection
