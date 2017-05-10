@@ -19,7 +19,6 @@ CREATE TABLE `sets` (
 --
 -- Daten für Tabelle `sets`
 --
-
 INSERT INTO `sets` (`setID`, `userFK`, `setName`, `languange1`, `language2`) VALUES
 (1, 4, 'testset', 's', 'd');
 
@@ -54,7 +53,6 @@ CREATE TABLE `user` (
 --
 -- Daten für Tabelle `user`
 --
-
 INSERT INTO `user` (`userID`, `username`, `mail`, `pw`) VALUES
 (4, 'Admin', 'admin@langwizz.ch', '6c7ca345f63f835cb353ff15bd6c5e052ec08e7a');
 
@@ -73,7 +71,6 @@ CREATE TABLE `words` (
 --
 -- Daten für Tabelle `words`
 --
-
 INSERT INTO `words` (`wordID`, `word1`, `word2`) VALUES
 (0, 'das Licht', 'light');
 
@@ -93,11 +90,19 @@ CREATE TABLE `word_set` (
 --
 
 --
+-- Indizes für die Tabelle `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`userID`);
+ALTER TABLE `user` CHANGE `userID` `userID` INT(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Indizes für die Tabelle `sets`
 --
 ALTER TABLE `sets`
   ADD PRIMARY KEY (`setID`),
   ADD KEY `userFK` (`userFK`);
+ALTER TABLE `sets` CHANGE `setID` `setID` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Indizes für die Tabelle `statistic`
@@ -108,16 +113,11 @@ ALTER TABLE `statistic`
   ADD KEY `FKuser` (`userFK`);
 
 --
--- Indizes für die Tabelle `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`userID`);
-
---
 -- Indizes für die Tabelle `words`
 --
 ALTER TABLE `words`
   ADD PRIMARY KEY (`wordID`);
+ALTER TABLE `words` CHANGE `wordID` `wordID` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Indizes für die Tabelle `word_set`

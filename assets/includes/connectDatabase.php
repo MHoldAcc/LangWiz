@@ -6,8 +6,7 @@
  * Time: 15:03
  */
 
-//Code zum ein set anlege
-session_start();
+//session_start();
 
 /*Fuehrt Code aus nachdem der Erfassen-Button bet�tigt wurde.*/
 if(!empty($_POST["newWords"])){
