@@ -33,8 +33,24 @@
         <div class="editVocabulary">
             <div class="placeholder"></div>
             <h1>Vocabulary Sets</h1>
+            <h3>Rename Set</h3>
+            <form method="post" action="editvocabulary.php" accept-charset="utf-8">
+                <input type="text" class="form-control" name="renamed" placeholder="Rename to" /><br>
+                <input type="submit" value="Rename" name="rename" class="newWords"/>
+            </form>
+            <?php
+            /*Führt Code aus nachdem der Erfassen-Button betätigt wurde.*/
+            if(!empty($_POST["rename"])){
+                if($_POST['renamed'] != ""){
+                    $renamed = $_POST['renamed'];
+                    renameSet($renamed);
+                }
+            }
+            ?>
+            <br><br>
             <h3>Add new Words</h3>
             <form method="post" action="editvocabulary.php" accept-charset="utf-8">
+                Word One:
                 <input type="text" class="form-control" name="wordOne" placeholder="Example: das Licht" /><br>
                 Word Two:
                 <input type="text" class="form-control" name="wordTwo" placeholder="Example: light" /><br>
