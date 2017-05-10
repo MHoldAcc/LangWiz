@@ -5,7 +5,8 @@
 <html>
 <head>
     <title>LangWiz Login</title>
-    <?php include '../assets/includes/headReferences.php';  ?>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/assets/css/default.css">
 </head>
 <body class="loginPage register">
 <div class="centeredForm">
