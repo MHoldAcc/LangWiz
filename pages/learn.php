@@ -50,10 +50,10 @@ include '../assets/includes/menuLeft.php';
 
     ?>
 
-    <h1 class="col-sm-10" style="background-color: gray; color:white; font-size: 45px; height: 50vh; text-align: center; line-height: 50vh; border-radius: 25px;" onclick="replaceword(this,'<?php  $i = $_SESSION["i"]; $temp = $arrayOne[$i]; print_r($temp['word1']) ?>','<?php $i = $_SESSION["i"]; $temp2 = $arrayTwo[$i]; print_r($temp2['word2']) ?>');"><?php $i = $_SESSION["i"]; $temp = $arrayOne[$i]; print_r($temp['word1']) ?></h1>
+    <h1 class="col-sm-10 wordbox" onclick="replaceword(this,'<?php  $i = $_SESSION["i"]; $temp = $arrayOne[$i]; print_r($temp['word1']) ?>','<?php $i = $_SESSION["i"]; $temp2 = $arrayTwo[$i]; print_r($temp2['word2']) ?>');"><?php $i = $_SESSION["i"]; $temp = $arrayOne[$i]; print_r($temp['word1']) ?></h1>
 
     <div class="col-sm-1"></div>
-    <div class="col-sm-12" style="min-height:20px"></div>
+    <div class="col-sm-12 min-height-20"></div>
 
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
@@ -61,14 +61,14 @@ include '../assets/includes/menuLeft.php';
         <div>
             <div class="col-sm-3"></div>
             <a href="learn.php?result=true" title="Correct" >
-                <img class="col-sm-3" src="../assets/img/Correct.png" name="add" value="add" style="background-color:green; border-radius: 25px;"/></a>
+                <img class="col-sm-3 correct" src="../assets/img/Correct.png" name="add" value="add"/></a>
             </a>
 
         </div>
         <div class="col-sm-1"></div>
         <div>
             <a href="learn.php?result=false" title="Wrong">
-                <img class="col-sm-3" src="../assets/img/Wrong.png" style="background-color:red; border-radius: 25px;"/></a>
+                <img class="col-sm-3 wrong" src="../assets/img/Wrong.png"/></a>
         </div>
     </div>
 
