@@ -22,25 +22,26 @@ if(!empty($_POST["newSet"])){
   if($_POST['setName'] != "" and $_POST['languageOne'] != "" and $_POST['languageTwo'] != "" ){
     $setName = $_POST['setName'];
     $languageOne = $_POST['languageOne'];
-	$languageTwo = $_POST['languageTwo'];
-    
-	$connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-	$text = "insert into sets (userFK, setName, languange1, language2) values ((select userID from user where mail = '". $_COOKIE['mail'] . "'), '".$setName."', '".$languageOne."', '".$languageTwo."')";
-	
-	$query = mysqli_query($connection, $text);
-	if ($query) {
-		mysqli_close($connection);
-		echo 'success';
-		header("location: ../../pages/dashboard.php");
-	}
-	else
-		echo 'An error occured...';
-	}
+    $languageTwo = $_POST['languageTwo'];
+
+    $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
+    $text = "insert into sets (userFK, setName, languange1, language2) values ((select userID from user where mail = '". $_COOKIE['mail'] . "'), '".$setName."', '".$languageOne."', '".$languageTwo."')";
+
+    $query = mysqli_query($connection, $text);
+    if ($query) {
+      mysqli_close($connection);
+      echo 'success';
+      header("location: ../../pages/dashboard.php");
+    }
+    else
+      echo 'An error occured...';
+  }
 }
+
 /*Fuehrt Code aus nachdem der Delete-Button betaetigt wurde.*/
 if(!empty($_POST['delete'])) {
   $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-  $delete = "delete from words where wordID = ?";
+  $delete = "delete from words where wordID like (select wordID from words WHERE word1 like '".$wordOne."' and word2 like '".$wordTwo."')";
   deleteFromDB($connection, $delete);
   $sql = "select * from words";
   //$sql = "select * from words ";
@@ -60,7 +61,7 @@ function insertIntoDB($wordOne, $wordTwo) {
     }
   } else {
     echo "Error....!!";
-    $delete = "delete from words where wordID = ?";
+    $delete = "delete from words where wordID = (select wordID from words WHERE word1 like '".$wordOne."' and word2 like '".$wordTwo."')";
     deleteFromDB($connection, $delete);
   }
   mysqli_close($connection);
