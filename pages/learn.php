@@ -22,17 +22,46 @@ include '../assets/includes/menuLeft.php';
     <div class="col-sm-12" style="min-height:20px"></div>
     <div class="col-sm-1"></div>
 
-    <h1 class="col-sm-10" style="background-color: gray; color:white; font-size: 45px; height: 50vh; text-align: center; line-height: 50vh; border-radius: 25px;" onclick="replaceword(this,'Kuchen','Cake');">Kuchen</h1>
+    <?php
+        include  'C:\xampp\htdocs\LangWiz\pages\allwords.php';
+
+        $arrayOne = getArray1();
+        $arrayTwo = getArray2();
+
+        $result = count($arrayOne);
+
+        if (isset($_SESSION['i'])) {
+            $counter = $_SESSION['i'];
+            $counter = (int)$counter;
+        }
+
+        if (isset($_GET['result'])==TRUE) {
+
+            $temp3 = $_SESSION['i'];
+            $temp3 = (int)$temp3;
+
+            $counter++;
+            $_SESSION['i'] = $counter;
+
+            if($temp3+1 == $result) {
+                $_SESSION['i'] = 0;
+            }
+        }
+
+    ?>
+
+    <h1 class="col-sm-10" style="background-color: gray; color:white; font-size: 45px; height: 50vh; text-align: center; line-height: 50vh; border-radius: 25px;" onclick="replaceword(this,'<?php  $i = $_SESSION["i"]; $temp = $arrayOne[$i]; print_r($temp['word1']) ?>','<?php $i = $_SESSION["i"]; $temp2 = $arrayTwo[$i]; print_r($temp2['word2']) ?>');"><?php $i = $_SESSION["i"]; $temp = $arrayOne[$i]; print_r($temp['word1']) ?></h1>
 
     <div class="col-sm-1"></div>
     <div class="col-sm-12" style="min-height:20px"></div>
 
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
+
         <div>
             <div class="col-sm-3"></div>
-            <a href="learn.php?result=true" title="Correct">
-                <img class="col-sm-3" src="../assets/img/Correct.png" style="background-color:green; border-radius: 25px;"/>
+            <a href="learn.php?result=true" title="Correct" >
+                <img class="col-sm-3" src="../assets/img/Correct.png" name="add" value="add" style="background-color:green; border-radius: 25px;"/></a>
             </a>
 
         </div>
@@ -46,6 +75,10 @@ include '../assets/includes/menuLeft.php';
     <script>
         function replaceword(that, word, oword) {
             that.textContent = that.textContent == oword ? word : oword;
+        }
+
+        function refresh(){
+
         }
     </script>
 </div>
