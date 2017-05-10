@@ -1,5 +1,5 @@
 <?php
-echo "hello";
+    session_start();
 	if (!empty($_POST['submit'])) {
 		if (empty($_POST['mail']) || empty($_POST['password'])) {
 			$error = "Username or Password is invalid";

@@ -25,10 +25,10 @@ include '../assets/includes/menuLeft.php';
             <div class="placeholder"></div>
                 <?php
                 $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-                $query1 = mysqli_query($connection, "SELECT setID FROM sets WHERE userFK like (select userID from `user` where mail like '".$_COOKIE['mail']."' )");
+                $query1 = mysqli_query($connection, "SELECT setID FROM sets WHERE userFK like (select userID from `user` where mail like '".$_SESSION['login_user']."' )");
                 $result1 = mysqli_num_rows($query1);
                 for ($i = 1; $i <= $result1;$i++) {
-                    $query2 = mysqli_query($connection, "SELECT setName FROM sets WHERE userFK like (select userID from `user` where mail like '".$_COOKIE['mail']."' )");
+                    $query2 = mysqli_query($connection, "SELECT setName FROM sets WHERE userFK like (select userID from `user` where mail like '".$_SESSION['login_user']."' )");
                     $result2 = mysqli_fetch_row($query2);
                     foreach ($result2 as $result) {
                         echo '<div class="vocab col-sm-11">';
