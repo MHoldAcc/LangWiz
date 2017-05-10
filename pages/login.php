@@ -18,14 +18,12 @@
 			$query = mysqli_query($connection, "select * from user where pw like '".$password."' AND mail like '".$mail."'");
 			$rows = mysqli_num_rows($query);
 				if ($rows == 1) {
-				    $cookie_name = "mail";
-				    $cookie_value = $mail;
-				    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 					$_SESSION['login_user']=$mail; // Initializing Session
                     header("location: dashboard.php"); // Redirecting To Other Page
 				} else {
 					$error = "Username or Password is invalid";
 					echo $error;
+                    $_SESSION['login_failure'] = 'true';
 					header("location: ../index.php");
 				}
 			mysqli_close($connection); // Closing Connection

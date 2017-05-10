@@ -60,6 +60,15 @@
     color: dodgerblue;
 }
 
+.loginPage .centeredForm .failure{
+    color: red;
+    margin-right:10px;
+}
+
+.loginPage .centeredForm .failure:hover{
+    color: red;
+}
+
 .page{
     background-color: aliceblue;
 }

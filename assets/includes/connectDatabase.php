@@ -24,7 +24,7 @@ if(!empty($_POST["newSet"])){
         $languageTwo = $_POST['languageTwo'];
 
         $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-        $text = "insert into sets (userFK, setName, languange1, language2) values ((select userID from user where mail = '". $_COOKIE['mail'] . "'), '".$setName."', '".$languageOne."', '".$languageTwo."')";
+        $text = "insert into sets (userFK, setName, languange1, language2) values ((select userID from user where mail = '". $_SESSION['login_user'] . "'), '".$setName."', '".$languageOne."', '".$languageTwo."')";
 
         $query = mysqli_query($connection, $text);
         if ($query) {
