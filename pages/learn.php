@@ -23,7 +23,7 @@ include '../assets/includes/menuLeft.php';
     <div class="col-sm-1"></div>
 
     <?php
-        include  'C:\xampp\htdocs\LangWiz\pages\allwords.php';
+        include  'allwords.php';
 
         $arrayOne = getArray1();
         $arrayTwo = getArray2();
