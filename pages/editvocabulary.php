@@ -70,7 +70,7 @@
                     deleteFromDB($connection, $delete);
                 }
                 $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-                $sql = "select * from words ";
+                $sql = "select * from words";
                 createDropdown($connection, $sql);
                 if (!empty($_GET['set'])){
                     $_SESSION['set'] = $_GET['set'];
