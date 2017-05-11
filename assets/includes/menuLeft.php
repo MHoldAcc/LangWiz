@@ -9,7 +9,7 @@
         <a href="settings.php" class="settings" title="Settings">
             <img src="../assets/img/Settings.png"/>
         </a>
-        <a href="logout.php" class="logout" title="Logout">
+        <a href="../assets/includes/logout.php" class="logout" title="Logout">
             <img src="../assets/img/Logout.png"/>
         </a>
     </div>
