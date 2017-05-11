@@ -19,27 +19,30 @@ if(!empty($_POST["newWords"])){
 
 if(!empty($_POST["newSet"])){
     if($_POST['setName'] != "" and $_POST['languageOne'] != "" and $_POST['languageTwo'] != "" ){
-        $setName = $_POST['setName'];
-        $languageOne = $_POST['languageOne'];
-        $languageTwo = $_POST['languageTwo'];
-
         $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-        $text = "insert into sets (userFK, setName, languange1, language2) values ((select userID from user where mail = '". $_SESSION['login_user'] . "'), '".$setName."', '".$languageOne."', '".$languageTwo."')";
-
-        $query = mysqli_query($connection, $text);
+        $setName = $_POST['setName'];
+        $setName = mysqli_real_escape_string($connection, $setName);
+        $languageOne = $_POST['languageOne'];
+        $languageOne = mysqli_real_escape_string($connection, $languageOne);
+        $languageTwo = $_POST['languageTwo'];
+        $languageTwo = mysqli_real_escape_string($connection, $languageTwo);
+        //$text = "insert into sets (userFK, setName, languange1, language2) values ((select userID from user where mail = '". $_SESSION['login_user'] . "'), '".$setName."', '".$languageOne."', '".$languageTwo."')";
+        $query = mysqli_query($connection, "insert into sets (userFK, setName, language1, language2) values ((select userID from user where mail = '". $_SESSION['login_user'] . "'), '".$setName."', '".$languageOne."', '".$languageTwo."')");
         if ($query) {
             mysqli_close($connection);
             echo 'success';
             header("location: ../../pages/dashboard.php");
         }
-        else
+        else {
             echo 'An error occured...';
+        }
+        mysqli_close($connection);
     }
 }
 
 function renameSet ($renamed){
     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-    $renamed = mysqli_real_escape_string($renamed);
+    $renamed = mysqli_real_escape_string($connection, $renamed);
     $query = mysqli_query($connection, "UPDATE `sets` set `setName`='" . $renamed . "' where  setName like '" . $_SESSION['set'] . "'");
     if ($query) {
         echo "Set has been renamed";
@@ -52,8 +55,8 @@ function renameSet ($renamed){
 
 function insertIntoDB($wordOne, $wordTwo){
     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-    $word1 = mysqli_real_escape_string($wordOne);
-    $word2 = mysqli_real_escape_string($wordTwo);
+    $word1 = mysqli_real_escape_string($connection, $wordOne);
+    $word2 = mysqli_real_escape_string($connection, $wordTwo);
     $query = mysqli_query($connection, "insert into `words`(word1, word2) values ('" . $word1 . "', '" . $word2 . "')");
     if ($query) {
         $query2 = mysqli_query($connection, "insert into `word_set` (setFK, wordFK) VALUES ((select setID from sets WHERE setName like '" . $_SESSION['set'] . "'),(select wordID from words WHERE word1 like '" . $word1 . "' and word2 like '" . $word2 . "'))");

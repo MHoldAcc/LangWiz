@@ -19,12 +19,12 @@
 			$rows = mysqli_num_rows($query);
 				if ($rows == 1) {
 					$_SESSION['login_user']=$mail; // Initializing Session
-                    header("location: dashboard.php"); // Redirecting To Other Page
+                    header("location: ../../pages/dashboard.php"); // Redirecting To Other Page
 				} else {
 					$error = "Username or Password is invalid";
 					echo $error;
                     $_SESSION['login_failure'] = 'true';
-					header("location: ../index.php");
+					header("location: ../../index.php");
 				}
 			mysqli_close($connection); // Closing Connection
 		}
