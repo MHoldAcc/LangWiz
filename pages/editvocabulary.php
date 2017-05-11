@@ -24,9 +24,10 @@
             <div class="placeholder"></div>
             <h1>Vocabulary Sets</h1>
             <h3>Rename Set</h3>
-            <form method="post" action="editvocabulary.php" accept-charset="utf-8">
-                <input type="text" class="form-control" name="renamed" placeholder="Rename to" /><br>
-                <input type="submit" value="Rename" name="rename" class="newWords"/>
+            <form method="post" action="editvocabulary.php" accept-charset="utf-8" class="col-sm-12">
+                <input type="text" class="col-sm-12" name="renamed" placeholder="Rename to" />
+                <div class="col-sm-12"></div>
+                <input type="submit" value="Rename" name="rename" class="newWords col-sm-12"/>
             </form>
             <?php
             /*Führt Code aus nachdem der Erfassen-Button betätigt wurde.*/
@@ -60,8 +61,6 @@
             <br><br><br><br>
             <h3>Delete Words</h3>
             <form method="post" action="editvocabulary.php">
-                <br>
-                <button type="submit" name="delete">Delete</button>
                 <?php
                 /*Führt Code aus nachdem der Delete-Button betätigt wurde.*/
                 if(isset($_POST['delete'])) {
@@ -80,6 +79,7 @@
                     header("Refresh:0");
                 }
                 ?>
+                <button type="submit" name="delete" class="col-sm-12">Delete</button>
             </form>
         </div>
     </div>
