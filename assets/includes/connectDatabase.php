@@ -49,27 +49,26 @@ function renameSet ($renamed){
     mysqli_close($connection);
 }
 
-function insertIntoDB($wordOne, $wordTwo) {
+function insertIntoDB($wordOne, $wordTwo){
     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-    $query = mysqli_query($connection, "insert into `words`(word1, word2) values ('".$wordOne."', '".$wordTwo."')");
+    $query = mysqli_query($connection, "insert into `words`(word1, word2) values ('" . $wordOne . "', '" . $wordTwo . "')");
     if ($query) {
-        $query2 = mysqli_query($connection, "insert into `word_set` (setFK, wordFK) VALUES ((select setID from sets WHERE setName like '".$_SESSION['set']."'),(select wordID from words WHERE word1 like '".$wordOne."' and word2 like '".$wordTwo."'))");
+        $query2 = mysqli_query($connection, "insert into `word_set` (setFK, wordFK) VALUES ((select setID from sets WHERE setName like '" . $_SESSION['set'] . "'),(select wordID from words WHERE word1 like '" . $wordOne . "' and word2 like '" . $wordTwo . "'))");
         if ($query2) {
             echo "Words Successfully added.....";
-            header("location: dashboard.php");
+            header("location: editvocabulary.php");
         } else {
             echo "Error..5..!!";
-            mysqli_query($connection, "delete from words where wordID like (select wordID from words WHERE word1 like '".$wordOne."' and word2 like '".$wordTwo."')");
+            mysqli_query($connection, "delete from words where wordID like (select wordID from words WHERE word1 like '" . $wordOne . "' and word2 like '" . $wordTwo . "')");
             header("location: editvocabulary.php");
         }
     } else {
         echo "Error....!!";
-        mysqli_query($connection, "delete from words where wordID like (select wordID from words WHERE word1 like '".$wordOne."' and word2 like '".$wordTwo."')");
+        mysqli_query($connection, "delete from words where wordID like (select wordID from words WHERE word1 like '" . $wordOne . "' and word2 like '" . $wordTwo . "')");
         header("location: editvocabulary.php");
     }
     mysqli_close($connection);
 }
-
 /*
 * Erstellt ein Dropdown indem es den Inhalt der Datenbank ausliest.
 * Das Dropdown DeleteZS wird erstellt und erhält so viele Optionen wie es Datensätze in der DB hat.
