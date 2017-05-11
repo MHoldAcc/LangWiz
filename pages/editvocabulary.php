@@ -69,7 +69,7 @@
                     deleteFromDB($connection, $delete);
                 }
                 $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-                $sql = "select * from words";
+                $sql = "select * from words WHERE wordID IN (SELECT wordFK from word_set where setFK like (select setID from sets where setName like '". $_SESSION['set'] ."'))";
                 createDropdown($connection, $sql);
                 if (!empty($_GET['set'])){
                     $_SESSION['set'] = $_GET['set'];
