@@ -1,5 +1,5 @@
 <?php
-	include_once('pages/session.php'); // Includes Login Script
+	include_once('assets/includes/session.php'); // Includes Login Script
     include('assets/includes/defaultfunctions.php');
 
 	if(!empty($_SESSION['login_user'])){
