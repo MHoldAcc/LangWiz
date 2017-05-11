@@ -11,7 +11,7 @@
 <head>
     <title>LangWizz Login</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/default.css">
 
 </head>
 

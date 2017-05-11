@@ -40,7 +40,7 @@ include '../assets/includes/menuLeft.php';
             $temp3 = $_SESSION['i'];
             $temp3 = (int)$temp3;
 
-            $counter++;
+            //$counter++;
             $_SESSION['i'] = $counter;
 
             if($temp3+1 == $result) {
