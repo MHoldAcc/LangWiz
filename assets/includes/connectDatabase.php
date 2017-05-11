@@ -39,6 +39,7 @@ if(!empty($_POST["newSet"])){
 
 function renameSet ($renamed){
     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
+    $renamed = mysqli_real_escape_string($renamed);
     $query = mysqli_query($connection, "UPDATE `sets` set `setName`='" . $renamed . "' where  setName like '" . $_SESSION['set'] . "'");
     if ($query) {
         echo "Set has been renamed";
@@ -51,20 +52,22 @@ function renameSet ($renamed){
 
 function insertIntoDB($wordOne, $wordTwo){
     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
-    $query = mysqli_query($connection, "insert into `words`(word1, word2) values ('" . $wordOne . "', '" . $wordTwo . "')");
+    $word1 = mysqli_real_escape_string($wordOne);
+    $word2 = mysqli_real_escape_string($wordTwo);
+    $query = mysqli_query($connection, "insert into `words`(word1, word2) values ('" . $word1 . "', '" . $word2 . "')");
     if ($query) {
-        $query2 = mysqli_query($connection, "insert into `word_set` (setFK, wordFK) VALUES ((select setID from sets WHERE setName like '" . $_SESSION['set'] . "'),(select wordID from words WHERE word1 like '" . $wordOne . "' and word2 like '" . $wordTwo . "'))");
+        $query2 = mysqli_query($connection, "insert into `word_set` (setFK, wordFK) VALUES ((select setID from sets WHERE setName like '" . $_SESSION['set'] . "'),(select wordID from words WHERE word1 like '" . $word1 . "' and word2 like '" . $word2 . "'))");
         if ($query2) {
             echo "Words Successfully added.....";
             header("location: editvocabulary.php");
         } else {
             echo "Error..5..!!";
-            mysqli_query($connection, "delete from words where wordID like (select wordID from words WHERE word1 like '" . $wordOne . "' and word2 like '" . $wordTwo . "')");
+            mysqli_query($connection, "delete from words where wordID like (select wordID from words WHERE word1 like '" . $word1 . "' and word2 like '" . $word2 . "')");
             header("location: editvocabulary.php");
         }
     } else {
         echo "Error....!!";
-        mysqli_query($connection, "delete from words where wordID like (select wordID from words WHERE word1 like '" . $wordOne . "' and word2 like '" . $wordTwo . "')");
+        mysqli_query($connection, "delete from words where wordID like (select wordID from words WHERE word1 like '" . $word1 . "' and word2 like '" . $word2 . "')");
         header("location: editvocabulary.php");
     }
     mysqli_close($connection);

@@ -3,9 +3,11 @@ if($_POST["register"] != null){
     if(!empty($_POST["name"]) && !empty($_POST["mail"] && !empty($_POST["password"]))) {
         $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
         $name = $_POST['name'];
+        $name = mysqli_real_escape_string($name);
         $email = $_POST['mail'];
+        $email = mysqli_real_escape_string($email);
         $password = sha1($_POST['password']); // Password Encryption, If you like you can also leave sha1.
-        // Check if e-mail address syntax is valid or not
+        $password = mysqli_real_escape_string($password); // Password Encryption, If you like you can also leave sha1.
         $email = filter_var($email, FILTER_SANITIZE_EMAIL); // Sanitizing email(Remove unexpected symbol like <,>,?,#,!, etc.)
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo "Invalid Email.......";
