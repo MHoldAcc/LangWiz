@@ -5,7 +5,7 @@
  * Date: 08.05.2017
  * Time: 20:41
  */
-
+@session_start();
 
 
 function getArray1() {
