@@ -9,13 +9,13 @@
 @session_start();
 
 /*Fuehrt Code aus nachdem der Erfassen-Button bet�tigt wurde.*/
-if(!empty($_POST["newWords"])){
+/*if(!empty($_POST["newWords"])){
     if($_POST['wordOne'] != "" and $_POST['wordTwo'] != "" ){
         $wordOne = $_POST['wordOne'];
         $wordTwo = $_POST['wordTwo'];
         insertIntoDB($wordOne, $wordTwo);
     }
-}
+}*/
 
 if(!empty($_POST["newSet"])){
     if($_POST['setName'] != "" and $_POST['languageOne'] != "" and $_POST['languageTwo'] != "" ){
