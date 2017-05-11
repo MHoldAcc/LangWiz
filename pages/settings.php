@@ -23,7 +23,7 @@ include '../assets/includes/menuLeft.php';
             <div class="chpw">
 
                 <h3>Change Password</h3>
-                <form method="post" action="newpass.php" accept-charset="utf-8">
+                <form method="post" action="../assets/includes/newpass.php" accept-charset="utf-8">
                     <div class="col-sm-3">
                         Old password:<br/>
                         New password:<br/>

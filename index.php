@@ -18,7 +18,7 @@
 <body class="loginPage">
     <div class="centeredForm">
         <img src="assets/img/Logo.png">
-        <form method="post" action="pages/login.php" accept-charset="utf-8">
+        <form method="post" action="assets/includes/login.php" accept-charset="utf-8">
             <input type="email" name="mail" placeholder="E-Mail"/>
             <input type="password" name="password" placeholder="Password"/>
             <input type="submit" value="Login" name="submit" class="login"/>
