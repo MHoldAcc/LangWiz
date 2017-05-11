@@ -6,12 +6,14 @@
  * Time: 20:41
  */
 @session_start();
-
+$_SESSION['set'] = (isset($_GET['set']) ? $_GET['set'] : $_SESSION['set']);
 
 function getArray1() {
     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
 
-    $query = "SELECT word1 FROM words";
+    $query = "SELECT word1 FROM words WHERE wordID in (
+    SELECT wordFK from word_set where setFK like (
+        select setID from sets where setName like '".$_SESSION['set']."'))";
     $result = mysqli_query($connection, $query) or die ("no query");
 
     $result_array = array();
@@ -28,7 +30,9 @@ function getArray1() {
 function getArray2 () {
     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
 
-    $query2 = "SELECT word2 FROM words";
+    $query2 = "SELECT word2 FROM words  WHERE wordID IN (
+    SELECT wordFK from word_set where setFK like (
+        select setID from sets where setName like '".$_SESSION['set']."'))";
     $result2 = mysqli_query($connection, $query2) or die ("no query");
 
     $result_array2 = array();
