@@ -62,6 +62,13 @@
             <h3>Delete Words</h3>
             <form method="post" action="editvocabulary.php">
                 <?php
+                if (!empty($_GET['set'])){
+                    $_SESSION['set'] = $_GET['set'];
+                } elseif (!empty($_SESSION['set'])){
+
+                } else {
+                    header("Refresh:0");
+                }
                 /*Führt Code aus nachdem der Delete-Button betätigt wurde.*/
                 if(isset($_POST['delete'])) {
                     $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
@@ -71,13 +78,6 @@
                 $connection = mysqli_connect("localhost", "root", "", "langwizz"); // Establishing connection with server..
                 $sql = "select * from words WHERE wordID IN (SELECT wordFK from word_set where setFK like (select setID from sets where setName like '". $_SESSION['set'] ."'))";
                 createDropdown($connection, $sql);
-                if (!empty($_GET['set'])){
-                    $_SESSION['set'] = $_GET['set'];
-                } elseif (!empty($_SESSION['set'])){
-
-                } else {
-                    header("Refresh:0");
-                }
                 ?>
                 <button type="submit" name="delete" class="col-sm-12">Delete</button>
             </form>
