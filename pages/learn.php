@@ -35,7 +35,7 @@ include '../assets/includes/menuLeft.php';
             $counter = (int)$counter;
         }
 
-        if (isset($_GET['result'])==TRUE) {
+        if (!empty($result)) {
 
             $temp3 = $_SESSION['i'];
             $temp3 = (int)$temp3;
@@ -47,7 +47,6 @@ include '../assets/includes/menuLeft.php';
                 $_SESSION['i'] = 0;
             }
         }
-
     ?>
 
     <h1 class="col-sm-10 wordbox" onclick="replaceword(this,'<?php  $i = $_SESSION["i"]; $temp = $arrayOne[$i]; print_r($temp['word1']) ?>','<?php $i = $_SESSION["i"]; $temp2 = $arrayTwo[$i]; print_r($temp2['word2']) ?>');"><?php $i = $_SESSION["i"]; $temp = $arrayOne[$i]; print_r($temp['word1']) ?></h1>
