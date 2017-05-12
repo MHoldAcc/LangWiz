@@ -39,7 +39,7 @@ include '../assets/includes/menuLeft.php';
 
         if (!empty($result)) {
 
-            $temp3 = $_SESSION["i"];
+            $temp3 = @$_SESSION["i"];
             $temp3 = (int)$temp3;
             //$temp3++;
             $counter++;
