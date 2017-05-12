@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add vocabulary set</title>
+    <title>Add Vocabulary Set</title>
     <?php include '../assets/includes/headReferences.php';  ?>
 </head>
 
