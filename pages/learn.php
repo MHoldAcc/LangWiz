@@ -39,7 +39,7 @@ include '../assets/includes/menuLeft.php';
 
         if (!empty($result)) {
 
-            $temp3 = $_SESSION["i"];
+            $temp3 = @$_SESSION["i"];
             $temp3 = (int)$temp3;
             //$temp3++;
             $counter++;
@@ -63,11 +63,11 @@ include '../assets/includes/menuLeft.php';
             <div class="col-sm-3"></div>
             <a href="learn.php?result=true" title="Correct" >
                 <img class="col-sm-3 correct" src="../assets/img/Correct.png" name="add" value="add"/></a>
-            </a>
 
         </div>
         <div class="col-sm-1"></div>
         <div>
+            <a href="learn.php?result=false" title="Wrong" >
                 <img class="col-sm-3 wrong" src="../assets/img/Wrong.png"/></a>
         </div>
     </div>
