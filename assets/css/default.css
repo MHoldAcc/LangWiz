@@ -1,0 +1,151 @@
+@import url("normalize.css");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.loginPage{
+    background-color: aliceblue;
+}
+
+.loginPage .centeredForm {
+    width:250px;
+    height:275px;
+
+    background-color: white;
+
+    border-radius: 5px;
+    padding: 20px;
+
+    /*Centers in middle*/
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.loginPage.register .centeredForm {
+    height:350px;
+}
+
+.loginPage .centeredForm img{
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: lightsteelblue;
+    border-radius: 25px;
+}
+
+.loginPage .centeredForm input {
+    height:25px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+.loginPage .centeredForm a{
+    float:right;
+    font-size: 10px;
+    color: dodgerblue;
+}
+
+.loginPage .centeredForm a:hover{
+    color: dodgerblue;
+}
+
+.loginPage .centeredForm a:visited{
+    color: dodgerblue;
+}
+
+.loginPage .centeredForm .failure{
+    color: red;
+    margin-right:10px;
+}
+
+.loginPage .centeredForm .failure:hover{
+    color: red;
+}
+
+.page{
+    background-color: aliceblue;
+}
+
+.page .menu{
+    min-height: 100vh;
+    background-color:darkcyan;
+
+}
+
+.page .menu .buttons img {
+    width:100%;
+    display:block;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    .page .menu {
+        height: auto;
+        min-height: 70px;
+    }
+    .page .menu .buttons img {
+        margin-top: 5px;
+        height: 60px;
+        width:auto;
+        display: inline-block;
+    }
+    .page .menu .buttons{
+        margin-right: auto;
+        float: right;
+    }
+}
+.dashboard .vocab{
+    height: 30px;
+    background-color: lightsteelblue;
+}
+
+.dashboard .vocab img{
+    height: 30px;
+}
+
+.container .vocab {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.container .placeholder{
+    height: 20px;
+}
+
+.container .vocab p{
+    font-family: Arial;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-top: 3px;
+}
+
+.learn .content .wordbox{
+    background-color: gray;
+    color:white;
+    font-size: 45px;
+    height: 50vh;
+    text-align: center;
+    line-height: 50vh;
+    border-radius: 25px;
+}
+
+.content .min-height-20{
+    min-height:20px;
+}
+
+.learn .content .correct{
+    background-color:green;
+    border-radius: 25px;
+}
+
+.learn .content .wrong{
+    background-color:red;
+    border-radius: 25px;
+}
